@@ -1,0 +1,111 @@
+@import '../config/importer.scss';
+
+.HeaderNav {
+  margin-left: auto;
+  text-align: right;
+  position: relative;
+
+  &-handler {
+    @extend %button-bordered;
+    color: color(text, light);
+    cursor: pointer;
+
+    @include responsive(md) {
+      display: none;
+    }
+
+    &:before {
+      @extend %icon;
+      background-image: url(../images/menu.svg);
+      margin-right: space(sm);
+    }
+  }
+
+  &-list {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    @include responsive(md) {
+      font-size: font-size(xs);
+    }
+
+    @include responsive(md, max-width) {
+      position: absolute;
+      right: 0;
+      z-index: zindex(1);
+
+      display: none;
+      width: column(6);
+      padding: space(xs);
+
+      background-color: color(background, body);
+      box-shadow: $drop-shadow;
+
+      &.open {
+        display: block;
+      }
+    }
+
+    @include responsive(xs, max-width) {
+      width: column(8);
+    }
+  }
+
+  &-item {
+    text-align: left;
+
+    a, button {
+      @extend %button;
+      width: 100%;
+      text-align: inherit;
+      cursor: pointer;
+      color: color(button, to);
+
+      @include responsive(md) {
+        color: color(text, light);
+      }
+    }
+
+    button {
+      @extend %ellipsis;
+    }
+
+    @include responsive(md) {
+      display: inline-block;
+
+      %item-icon-config {
+        content: '';
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        background-size: cover;
+        vertical-align: text-bottom;
+        margin-right: space(sm);
+      }
+
+      .admin:before {
+        @extend %item-icon-config;
+        background-image: url(../images/admin.svg);
+      }
+
+      .favoritos:before {
+        @extend %item-icon-config;
+        background-image: url(../images/favoritos.svg);
+      }
+
+      &:first-child {
+        a {
+          border-color: currentColor;
+          padding: .3125rem space(lg);
+        }
+      }
+
+      &:last-child {
+        border-left: .125rem solid currentColor;
+        max-width: column(3);
+      }
+    }
+  }
+}

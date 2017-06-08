@@ -1,0 +1,3 @@
+@function zindex($level) {
+  @return map-deep-get($z-indexes, $level);
+}

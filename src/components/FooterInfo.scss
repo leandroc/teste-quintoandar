@@ -1,0 +1,36 @@
+@import '../config/importer.scss';
+
+.FooterInfo {
+  background-color: color(footer, background, dark);
+  color: color(footer, text, 1);
+  font-size: font-size(xs);
+  text-align: center;
+
+  ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: space(sm);
+
+    @include responsive(md) {
+      display: inline-block;
+
+      &:not(:last-child):not(:first-child) {
+        margin: 0 space(xl);
+
+        &:before {
+          content: '•';
+        }
+      }
+    }
+  }
+
+  a {
+    color: color(footer, text, 1);
+    text-decoration: none;
+  }
+}

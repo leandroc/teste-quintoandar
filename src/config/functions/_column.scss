@@ -1,0 +1,22 @@
+@function column($user-col: 1) {
+  $col: $user-col;
+  $grid-columns: map-deep-get($grid, columns);
+  $grid-gutter: map-deep-get($grid, gutter);
+  $grid-width: map-deep-get($grid, max-width);
+
+  @if $user-col < 1 {
+    $col: 1;
+  } @else if $user-col > $grid-columns {
+    $col: $grid-columns;
+  }
+
+  $total-gutter: $grid-gutter * ($col - 1);
+  $max-gutter: $grid-gutter * ($grid-columns - 1);
+
+  @return calc(#{$total-gutter} + (((#{$grid-width} - #{$max-gutter}) / #{$grid-columns}) * #{$col}));
+}
+
+@function offset($col) {
+  @return calc(#{column($col)} + #{map-deep-get($grid, gutter)});
+}
+

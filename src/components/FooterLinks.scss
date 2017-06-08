@@ -1,0 +1,71 @@
+@import '../config/importer.scss';
+
+.FooterLinks {
+  display: none;
+  padding: space(md);
+  font-size: font-size(xs);
+  background-color: color(footer, background, base);
+
+  @include responsive(md) {
+    display: flex;
+  }
+
+  strong {
+    color: color(footer, text, 1);
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    &:not(:last-of-type) {
+      margin-bottom: space(lg);
+    }
+  }
+
+  li { margin: space(xs) 0; }
+
+  a {
+    color: color(footer, text, light);
+    cursor: pointer;
+  }
+
+  nav {
+    margin-left: auto;
+    display: flex;
+
+    div + div {
+      margin-left: space(xl);
+    }
+  }
+
+  %icon-config {
+    @extend %icon;
+    margin-right: space(xs);
+  }
+
+  .facebook:before {
+    @extend %icon-config;
+    background-image: url(../images/facebook.svg);
+  }
+  .instagram:before {
+    @extend %icon-config;
+    background-image: url(../images/instagram.svg);
+  }
+  .twitter:before {
+    @extend %icon-config;
+    background-image: url(../images/twitter.svg);
+  }
+  .medium:before {
+    @extend %icon-config;
+    background-image: url(../images/medium.svg);
+  }
+  .linkedin:before {
+    @extend %icon-config;
+    background-image: url(../images/linkedin.svg);
+  }
+}

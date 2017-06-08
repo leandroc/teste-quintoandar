@@ -1,0 +1,74 @@
+$base-space: 1rem !default;
+$drop-shadow: 0 0 .3rem rgba(#000, .3) !default;
+
+$colors: (
+  text: (
+    light: #fff,
+    base: #a0a0a0,
+    dark: #505050
+  ),
+  button: (
+    from: #5399e0,
+    to: #5987d5,
+    text: #fff,
+    secondary: #9d9d9d
+  ),
+  background: (
+    body: #fff,
+    secondary: #dcdcdc,
+    footer: (
+      light: #f0f0f0,
+      base: #505050,
+      dark: #303030
+    )
+  ),
+
+  footer: (
+    background: (
+      light: #f0f0f0,
+      base: #505050,
+      dark: #303030
+    ),
+    text: (
+      1: #808080,
+      2: #a0a0a0,
+      light: #fff
+    )
+  )
+) !default;
+
+$font-sizes: (
+  xs: .75rem,
+  sm: .875rem,
+  md: 1rem,
+  lg: 1.125rem,
+  xl: 2rem
+) !default;
+
+$spaces: (
+  xs: $base-space * .25,
+  sm: $base-space * .5,
+  md: $base-space,
+  lg: $base-space * 1.5,
+  xl: $base-space * 3
+) !default;
+
+$grid: (
+  columns: 12,
+  gutter: $base-space * 2,
+  max-width: 100vw
+) !default;
+
+$breakpoints: (
+  xs: 450px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$z-indexes: (
+  1: 10,
+  2: 20,
+  3: 30,
+) !default;

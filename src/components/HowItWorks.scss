@@ -1,0 +1,76 @@
+@import '../config/importer.scss';
+
+.HowItWorks {
+  $this: &;
+  padding: space(xl) space(md);
+  text-align: center;
+
+  %title-config {
+    color: color(text, dark);
+    font-weight: normal;
+  }
+
+  h2 {
+    @extend %title-config;
+
+    font-size: font-size(xl);
+  }
+
+  h3 {
+    @extend %title-config;
+  }
+
+  p {
+    color: color(text, base);
+    font-size: font-size(sm);
+    line-height: 1.5;
+
+    &#{$this}-lead {
+      font-size: font-size(lg);
+    }
+  }
+
+  strong {
+    color: color(text, dark);
+    font-weight: normal;
+  }
+
+  hr {
+    border: 0;
+    height: 2px;
+    background-color: #eee;
+    margin: space(xl) auto;
+    width: column(5);
+  }
+
+  ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    @include responsive(md) {
+      display: flex;
+    }
+  }
+
+  li {
+    margin-bottom: space(xl);
+
+    @include responsive(md) {
+      margin-bottom: 0;
+      padding: 0 space(lg);
+      width: column(4);
+    }
+
+    @include responsive(md) {
+      &:first-child { margin-left: offset(1); }
+      &:last-child { margin-right: offset(1); }
+    }
+  }
+
+  img {
+    @extend %block-center;
+    max-width: 6.25rem;
+  }
+}

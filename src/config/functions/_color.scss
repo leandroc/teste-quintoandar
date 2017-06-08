@@ -1,0 +1,10 @@
+// by https://gist.github.com/jlong/8760275#gistcomment-1279499
+@function color($color-list...) {
+  $value: $colors;
+
+  @each $item in $color-list {
+    $value: map-get($value, $item);
+  }
+
+  @return $value;
+}

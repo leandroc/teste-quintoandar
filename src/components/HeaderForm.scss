@@ -1,0 +1,55 @@
+@import '../config/importer.scss';
+
+.HeaderForm {
+  @extend %block-center;
+
+  width: 100%;
+  text-align: center;
+
+  @include responsive(md) {
+    margin: 3.5rem;
+  }
+
+  form {
+    @extend %block-center;
+    display: flex;
+
+    @include responsive(xs) {
+      width: column(9);
+    }
+
+    @include responsive(sm) {
+      width: column(7);
+    }
+
+    @include responsive(md) {
+      width: column(5);
+    }
+
+    @include responsive(lg) {
+      width: column(4);
+    }
+  }
+
+  label {
+    @extend %visually-hidden;
+  }
+
+  input {
+    @extend %input;
+    margin-right: .0625rem;
+  }
+
+  button {
+    @extend %button;
+    background-color: color(button, to);
+    cursor: pointer;
+
+    span { @extend %visually-hidden; }
+
+    &:before {
+      @extend %icon;
+      background-image: url(../images/busca.svg);
+    }
+  }
+}

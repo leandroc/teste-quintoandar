@@ -1,0 +1,25 @@
+// Main importer config
+// =============================================================================
+@import './_variables';
+
+// FUNCTIONS
+// =============================================================================
+@import './functions/_map-deep-get';
+@import './functions/_color';
+@import './functions/_z-index';
+@import './functions/_column';
+@import './functions/_space';
+@import './functions/_font-size';
+
+// MIXINS
+// =============================================================================
+@import './mixins/_responsive';
+
+// PLACEHOLDERS
+// =============================================================================
+@import './placeholders/_button';
+@import './placeholders/_input';
+@import './placeholders/_ellipsis';
+@import './placeholders/_block-center';
+@import './placeholders/_visually-hidden';
+@import './placeholders/_icon';

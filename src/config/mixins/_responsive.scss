@@ -1,0 +1,6 @@
+@mixin responsive($size, $type: min-width) {
+  @media (#{$type}: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+

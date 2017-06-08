@@ -1,0 +1,18 @@
+%input {
+  -webkit-appearance: none;
+  border: 2px solid transparent;
+  border-radius: 0;
+  font-size: font-size(sm);
+  width: 100%;
+  padding: .3125rem space(md);
+
+  &::-webkit-input-placeholder {
+    font-size: font-size(xs);
+  }
+  &::-moz-placeholder {
+    font-size: font-size(xs);
+  }
+  &:-ms-input-placeholder {
+    font-size: font-size(xs);
+  }
+}

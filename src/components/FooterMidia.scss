@@ -1,0 +1,63 @@
+@import '../config/importer.scss';
+
+.FooterMidia {
+  display: none;
+  padding: space(xl) space(md);
+  color: color(footer, text, 2);
+  text-align: center;
+  background-color: color(footer, background, light);
+
+  @include responsive(md) {
+    display: block;
+  }
+
+  strong {
+    display: block;
+    font-weight: normal;
+    margin-bottom: space(lg);
+  }
+
+  ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include responsive(md) {
+      + li { margin-left: space(lg); }
+    }
+
+    @include responsive(lg) {
+      + li { margin-left: space(xl); }
+    }
+  }
+
+  a {
+    display: block;
+    height: 60px;
+    background-image: url(../images/sprite-midia.png);
+    cursor: pointer;
+  }
+
+  .exame { width: 150px; }
+  .infomoney {
+    width: 180px;
+    background-position-x: -150px;
+  }
+  .estadao {
+    width: 150px;
+    background-position-x: -330px;
+  }
+  .pegn {
+    width: 120px;
+    background-position-x: 120px;
+  }
+
+  span {
+    @extend %visually-hidden;
+  }
+}
